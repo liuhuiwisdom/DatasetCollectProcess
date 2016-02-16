@@ -47,6 +47,17 @@ def key_value_reverse(dicts):
 #          'steely_dan': '10017', 'suzanne_vega': '10018', 'tori_amos': '10019', 'u2': '10020'}
 
 dicts = generate_singer_label(wavs_dir)
+label_singer = key_value_reverse(dicts)
+
+
+def record_singer_name(label_singer):
+    for key, value in label_singer.items():
+        fls = open('label_singer.txt', 'a')
+        line = str(key) + ':' + str(value) + '\n'
+        fls.writelines(line)
+
+        fls.close()
+    return 0
 
 
 def rename_artist_folds(dir='107singersMp3'):
@@ -209,6 +220,8 @@ def draw_wav(wav_dir):
 #######################################
 # main steps
 #######################################
+# step 0
+# record_singer_name(label_singer)
 # step 1
 # rename_artist_folds()
 # step 2 manually change the out to 107singersMp3 and delete the old one
