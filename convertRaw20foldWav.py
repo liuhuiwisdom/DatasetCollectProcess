@@ -110,6 +110,7 @@ def conmbine(singer_item='zhangxulong', dir='album'):
         os.makedirs("combined/")
     single_sound = all_sound.set_channels(1)
     single_sound.export(output_dir, format="wav")
+    # single_sound.export(output_dir, format="wav",bitrate="160k")
     return 0
 
 
